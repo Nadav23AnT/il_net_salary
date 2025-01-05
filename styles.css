@@ -1,0 +1,330 @@
+/* General Body Styling */
+body {
+  font-family: 'Assistant', Arial, sans-serif;
+  max-width: 1200px;
+  margin: 20px auto;
+  padding: 20px;
+  line-height: 1.6;
+  background-color: #f9f9f9;
+  border-radius: 15px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  direction: rtl;
+  text-align: right;
+  overflow-x: hidden;
+  position: relative;
+}
+
+/* Title Section */
+.site-title {
+  text-align: center;
+  margin-bottom: 30px;
+  padding: 20px;
+  background: linear-gradient(135deg, rgba(0, 0, 0, 0.8), rgba(50, 50, 50, 0.8));
+  border-radius: 15px;
+  color: #ffffff;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.site-title h1 {
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin: 0;
+  color: #00FF7F; /* Futuristic neon green */
+  text-shadow: 0 0 15px #00FF7F, 0 0 30px #00FF7F;
+}
+
+.site-title .subtitle {
+  font-size: 1rem;
+  font-weight: 300;
+  color: #ffffff;
+  margin-top: 10px;
+}
+
+/* Calculator Container */
+.calculator-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 20px;
+  /* Space between inputs and results */
+  margin-top: 30px;
+}
+
+/* Inputs Section */
+.inputs-section {
+  flex: 1;
+  padding: 20px;
+  background-color: #ffffff;
+  border-radius: 15px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.inputs-section label {
+  font-size: 14px;
+  margin-bottom: 5px;
+  display: block;
+}
+
+.inputs-section input,
+.inputs-section select,
+.inputs-section button {
+  margin-bottom: 15px;
+  padding: 8px;
+  width: 100%;
+  font-size: 14px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+}
+
+.inputs-section button {
+  background-color: #808080;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  border: none;
+  transition: background-color 0.3s ease;
+}
+
+.inputs-section button:hover {
+  background-color: #696969;
+}
+
+/* Results Section */
+.results-section {
+  flex: 1;
+  padding: 20px;
+  background-color: #ffffff;
+  border-radius: 15px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.neto-salary {
+  margin-bottom: 20px;
+}
+
+.neto-value {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #4CAF50; /* Green */
+}
+
+/* Breakdown Container */
+.breakdown-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.breakdown-item {
+  flex: 1 1 calc(45% - 10px);
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  background-color: #fff;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.breakdown-item p {
+  margin: 0;
+  font-size: 1.2rem;
+}
+
+.deduction-value {
+  font-size: 1.4rem;
+  font-weight: bold;
+  color: #fc1904; /* Light Red */
+  margin-top: 5px;
+}
+
+/* Override the deduction-value inside total-deductions to be white */
+.total-deductions .deduction-value {
+  color: white !important;
+  font-weight: bold;
+  font-size: 1.6rem;
+}
+
+.total-deductions {
+  background-color: #ff0000; /* Light Red */
+  color: white;
+  padding: 15px;
+  margin-top: 20px;
+  border-radius: 15px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  flex-basis: 100%;
+  align-self: center;
+}
+
+/* Charts Container */
+.charts-container {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  margin-top: 30px;
+}
+
+.chart-container {
+  flex: 1;
+  max-width: 48%;
+  min-width: 300px;
+  text-align: center;
+  padding: 15px;
+  background-color: #ffffff;
+  border-radius: 15px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+canvas {
+  width: 100% !important;
+  height: auto !important;
+  max-width: 100%;
+}
+
+/* Footer Section */
+.footer {
+  text-align: center;
+  color: #ffffff;
+  margin-top: 50px;
+  padding: 20px 0;
+  background: #121212;
+}
+
+.author-name {
+  font-weight: bold;
+  color: #00FF7F;
+  text-shadow: 0 0 10px #00FF7F;
+}
+
+.social-icons {
+  margin-top: 10px;
+}
+
+.social-icons a {
+  margin: 0 10px;
+  display: inline-block;
+}
+
+.social-icon {
+  width: 30px;
+  height: 30px;
+  filter: brightness(0) invert(1);
+  transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.social-icon:hover {
+  transform: scale(1.2);
+  filter: brightness(0.7) invert(1);
+}
+
+/* Animated Geometric Background */
+.geometric-bg span {
+  position: absolute;
+  display: block;
+  width: 20px;
+  height: 20px;
+  background: rgba(255, 255, 255, 0.1);
+  animation: move 25s linear infinite;
+  bottom: -150px;
+  border-radius: 50%;
+}
+
+@keyframes move {
+  0% {
+    transform: translateY(0) rotate(0deg);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-1000px) rotate(720deg);
+    opacity: 0;
+  }
+}
+
+.geometric-bg span:nth-child(1) {
+  left: 10%;
+  width: 80px;
+  height: 80px;
+  animation-duration: 20s;
+  animation-delay: 0s;
+}
+
+.geometric-bg span:nth-child(2) {
+  left: 20%;
+  width: 30px;
+  height: 30px;
+  animation-duration: 15s;
+  animation-delay: 2s;
+}
+
+.geometric-bg span:nth-child(3) {
+  left: 70%;
+  width: 70px;
+  height: 70px;
+  animation-duration: 18s;
+  animation-delay: 4s;
+}
+
+.geometric-bg span:nth-child(4) {
+  left: 50%;
+  width: 40px;
+  height: 40px;
+  animation-duration: 22s;
+  animation-delay: 6s;
+}
+
+.geometric-bg span:nth-child(5) {
+  left: 80%;
+  width: 50px;
+  height: 50px;
+  animation-duration: 25s;
+  animation-delay: 8s;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  body {
+    margin: 10px auto;
+    padding: 10px;
+  }
+
+  .calculator-container {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .inputs-section,
+  .results-section {
+    flex: none;
+    width: 100%;
+    margin-bottom: 20px;
+  }
+
+  .charts-container {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .chart-container {
+    max-width: 100%;
+    margin-bottom: 20px;
+  }
+
+  .site-title h1 {
+    font-size: 2rem;
+  }
+
+  .site-title .subtitle {
+    font-size: 0.9rem;
+  }
+
+  .footer {
+    font-size: 0.8rem;
+  }
+
+  .social-icon {
+    width: 25px;
+    height: 25px;
+  }
+}

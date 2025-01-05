@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="he">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>מחשבון שכר נטו</title>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Assistant:wght@400;600&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="styles.css">
+
+
+
+</head>
+
+<body>
+  <header class="site-title">
+    <h1>מחשבון שכר נטו</h1>
+    <p class="subtitle">
+      מחשבון שכר נטו זה נועד לעזור לך לחשב את השכר נטו החודשי והשנתי שלך בהתאם להכנסותיך והוצאותיך.
+      המחשבון מתאים גם לעצמאיים וגם לשכירים, וכולל אפשרויות התאמה אישית לניכויים כמו קרן פנסיה, קרן השתלמות, הוצאות
+      שוטפות ותשואה שנתית.
+    </p>
+  </header>
+
+
+  <div class="calculator-container">
+    <!-- Inputs Section -->
+    <div class="inputs-section">
+      <label for="employmentType">סוג עבודה:</label>
+      <select id="employmentType">
+        <option value="employee">שכיר</option>
+        <option value="selfEmployed">עצמאי</option>
+      </select>
+
+      <label for="monthlyHours">שעות חודשיות:</label>
+      <input type="number" id="monthlyHours" value="180">
+
+      <label for="hourlyRate">שכר לשעה (₪):</label>
+      <input type="number" id="hourlyRate" value="85">
+
+      <label for="taxCreditPoints">נקודות זיכוי:</label>
+      <input type="number" id="taxCreditPoints" value="2.25">
+
+      <label for="pensionPercentage">ניכוי לקרן פנסיה (%):</label>
+      <input type="number" id="pensionPercentage" value="6">
+
+      <label for="educationFundPercentage">ניכוי לקרן השתלמות (%):</label>
+      <input type="number" id="educationFundPercentage" value="2.5">
+
+      <label for="deductionPercentage">אחוז כולל לקרן פנסיה והשתלמות (%):</label>
+      <input type="number" id="deductionPercentage" value="100">
+
+      <div id="extraDeductionContainer" style="display: none;">
+        <label for="extraDeduction">ניכוי נוסף (רק לעצמאים, %):</label>
+        <input type="number" id="extraDeduction" value="0">
+      </div>
+
+      <button id="calculateButton" onclick="calculateNeto()">חשב שכר נטו</button>
+    </div>
+    <div class="geometric-bg">
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+
+    <!-- Results Section -->
+    <div class="results-section">
+      <div class="neto-salary">
+        <h2>שכר נטו חודשי:</h2>
+        <p id="monthlyNeto" class="neto-value">₪0.00</p>
+      </div>
+
+      <div class="breakdown-container">
+        <div class="breakdown-item">
+          <p>מס הכנסה:</p>
+          <p id="taxDeduction" class="deduction-value">₪0.00</p>
+        </div>
+        <div class="breakdown-item">
+          <p>ביטוח לאומי:</p>
+          <p id="nationalInsurance" class="deduction-value">₪0.00</p>
+        </div>
+        <div class="breakdown-item">
+          <p>ביטוח בריאות:</p>
+          <p id="healthInsurance" class="deduction-value">₪0.00</p>
+        </div>
+        <div class="breakdown-item">
+          <p>ניכוי פנסיה:</p>
+          <p id="pensionDeduction" class="deduction-value">₪0.00</p>
+        </div>
+        <div class="breakdown-item">
+          <p>ניכוי קרן השתלמות:</p>
+          <p id="educationFund" class="deduction-value">₪0.00</p>
+        </div>
+        <div class="breakdown-item total-deductions">
+          <p>סה"כ ניכויים:</p>
+          <p id="totalDeductions" class="deduction-value">₪0.00</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Charts Section -->
+  <div class="charts-container">
+    <div class="chart-container">
+      <h2>גרף עוגה: התפלגות ניכויים חודשיים</h2>
+      <canvas id="deductionsChart" width="400" height="200"></canvas>
+    </div>
+
+    <div class="chart-container">
+      <h2>גרף חסכונות שנתיים:</h2>
+      <canvas id="annualSavingsChart" width="400" height="200"></canvas>
+    </div>
+  </div>
+
+
+
+  <script src="app.js"></script>
+</body>
+<footer class="footer">
+  <p>Created by <span class="author-name">Nadav Chen</span></p>
+  <div class="social-icons">
+    <a href="https://github.com/Nadav23AnT" target="_blank" title="GitHub">
+      <img src="https://cdn-icons-png.flaticon.com/512/25/25231.png" alt="GitHub" class="social-icon">
+    </a>
+    <a href="https://www.linkedin.com/in/nadavchen97/" target="_blank" title="LinkedIn">
+      <img src="https://cdn-icons-png.flaticon.com/512/174/174857.png" alt="LinkedIn" class="social-icon">
+    </a>
+  </div>
+</footer>
+
+</html>
+
